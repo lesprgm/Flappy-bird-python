@@ -1,16 +1,17 @@
-# Flappy-bird-python
-A basic Flappy Bird game made in Python
+# Flappy Bird Python
 
-I took the assets from https://github.com/zhaolingzhi/FlapPyBird-master | Credits to him
-
-## Current State:
-![Screenshot](https://github.com/LeonMarqs/Flappy-bird-python/blob/master/Screenshot_1.png)
-
-## Dependence:
-* pygame
-
-## Contribution
-It's a simple model, so I'd be very grateful if you could help me to improve the game.
+A Python implementation of the classic Flappy Bird game with enhanced features.
 
 
+**Credits:**
+* I got the inspiration, original code and assets from https://github.com/LeonMarqs/Flappy-bird-python | All credits to them
 
+**Enhanced Features:**
+* **High Score Database:** Stores and displays the highest score achieved.
+* **Dynamic Scoring:** Displays the current score as the player progresses.
+* **Day and Night Cycle:** Alternates between day and night backgrounds every 100 points.
+* **Increasing Difficulty:** The game speed gradually increases after every 100 points making it difficult for the user.
+
+**Forked and Modified by:**
+* Leslie Osei-Anane
+* https://github.com/lesprgm
