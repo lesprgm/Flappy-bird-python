@@ -6,7 +6,7 @@ import sqlite3
 SCREEN_WIDTH = 400
 SCREEN_HEIGHT = 600
 
-# Speed increases after every 100 point interval
+
 SPEED = 20
 GRAVITY = 2.5
 GAME_SPEED = 15
@@ -26,7 +26,7 @@ score = 0
 pygame.font.init()
 
 def create_database():
-    # Connect to SQLite database (or create it if it doesn't exist)
+  
     connection = sqlite3.connect("highscore.db")
     cursor = connection.cursor()
       
@@ -69,14 +69,14 @@ class Bird(pygame.sprite.Sprite):
 
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
-        self.images = [pygame.image.load('bluebird-upflap.png').convert_alpha(),
-                       pygame.image.load('bluebird-midflap.png').convert_alpha(),
-                       pygame.image.load('bluebird-downflap.png').convert_alpha()]
+        self.images = [pygame.image.load('assets/bluebird-upflap.png').convert_alpha(),
+                       pygame.image.load('assets/bluebird-midflap.png').convert_alpha(),
+                       pygame.image.load('assets/bluebird-downflap.png').convert_alpha()]
 
         self.speed = SPEED
 
         self.current_image = 0
-        self.image = pygame.image.load('bluebird-upflap.png').convert_alpha()
+        self.image = pygame.image.load('assets/bluebird-upflap.png').convert_alpha()
         self.mask = pygame.mask.from_surface(self.image)
 
         self.rect = self.image.get_rect()
@@ -115,7 +115,7 @@ class Pipe(pygame.sprite.Sprite):
     def __init__(self, inverted, xpos, ysize):
         pygame.sprite.Sprite.__init__(self)
 
-        self.image = pygame.image.load('pipe-green.png').convert_alpha()
+        self.image = pygame.image.load('assets/pipe-green.png').convert_alpha()
         self.image = pygame.transform.scale(self.image, (PIPE_WIDTH, PIPE_HEIGHT))
 
         self.rect = self.image.get_rect()
@@ -141,7 +141,7 @@ class Ground(pygame.sprite.Sprite):
     
     def __init__(self, xpos):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.image.load('base.png').convert_alpha()
+        self.image = pygame.image.load('assets/base.png').convert_alpha()
         self.image = pygame.transform.scale(self.image, (GROUND_WIDTH, GROUND_HEIGHT))
 
         self.mask = pygame.mask.from_surface(self.image)
@@ -169,11 +169,11 @@ pygame.init()
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption('Flappy Bird')
 
-BACKGROUND_DAY = pygame.image.load('background-day.png')
+BACKGROUND_DAY = pygame.image.load('assets/background-day.png')
 BACKGROUND_DAY = pygame.transform.scale(BACKGROUND_DAY, (SCREEN_WIDTH, SCREEN_HEIGHT))
-BACKGROUND_NIGHT = pygame.image.load('background-night.png')
+BACKGROUND_NIGHT = pygame.image.load('assets/background-night.png')
 BACKGROUND_NIGHT = pygame.transform.scale(BACKGROUND_NIGHT, (SCREEN_WIDTH, SCREEN_HEIGHT))
-BEGIN_IMAGE = pygame.image.load('message.png').convert_alpha()
+BEGIN_IMAGE = pygame.image.load('assets/message.png').convert_alpha()
 #CLOSE_IMAGE = pygame.image.load().convert_alpha()
 
 
@@ -300,7 +300,7 @@ while True:
     
         update_highscore(score)
         
-        game_over_image = pygame.image.load('gameover.png').convert_alpha()
+        game_over_image = pygame.image.load('assets/gameover.png').convert_alpha()
         game_over_image = pygame.transform.scale(game_over_image, (int(game_over_image.get_width() * 0.3), int(game_over_image.get_height() * 0.3)))
         screen.blit(game_over_image, (SCREEN_WIDTH / 2 - game_over_image.get_width() / 2, SCREEN_HEIGHT / 2 - game_over_image.get_height() / 2))
         
