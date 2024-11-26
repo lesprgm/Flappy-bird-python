@@ -16,6 +16,6 @@ A Python implementation of the classic Flappy Bird game with enhanced features.
 * Leslie Osei-Anane
 * https://github.com/lesprgm
 
-**Languages used:
-*Python
-*SQL
+**Languages:**
+* Python
+* SQL
